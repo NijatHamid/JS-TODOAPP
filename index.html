@@ -5,24 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamidov's TODO APP</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
     
-    <div>
-        
+    <!-- <div class="header">
+        <img class= "logo" src="logo.png">
+    </div> -->
+
+    <div class="row">
+        <div class="logo-row">
+          <img src="logo.png" alt="logo" class="logo">
+        </div>
+      </div>
+      <h2 class="header_darkmode">Dark Mode</h2>
+    <button onclick="myFunction()" class="darkmode-button" >
+        <input type="submit" id="w8-d-blue" name="w8-d-blue" class="w8-button iconize" value="" />
+        <!-- <img src="darkmode.png" class="darkmode-image"/> -->
+    </button>
+
+    <div class="main-grid">
+        <div class="search-grid">
+            <input id="todo-title" type="text" placeholder="Task" />
+            <input id= "date-picker" type="date" />
+            <button id="add_button" onclick="addTodo()">Add Todo</button>
+        </div>
     </div>
+    <div class="main-todo">
+        <div></div>
+        <div id="todo-list"></div>
+        <diV></diV>
+    </div>
+
+
+
     
-    <input id="todo-title" type="text" />
-    <input id= "date-picker" type="date" />
-    <button onclick="addTodo()">Add Todo</button>
-
-    <div id="todo-list"></div>
-
-
-
-    <div id="receipt"></div>
-
 
     <!-- <button onclick="apple()">Apple</button>
     <button onclick="tomato()">Tomato</button>

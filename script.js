@@ -101,19 +101,22 @@ const  render = () => {
 
     todos.forEach(todo => {
         const element= document.createElement('div');
-        
+        element.classList.add('todo-element');
         if (todo.isEditing === true) {
             const textbox = document.createElement('input');
+            textbox.classList.add('textbox');
             textbox.type = 'text';
             textbox.id = 'edit-title-' + todo.id;
             element.appendChild(textbox);
 
             const datePicker = document.createElement('input');
+            datePicker.classList.add('datePicker');
             datePicker.type = 'date';
             datePicker.id = 'edit-date-' + todo.id;
             element.appendChild(datePicker);
 
             const updateButton = document.createElement('button');
+            updateButton.classList.add('updateButton');
             updateButton.innerText = 'Update';
             updateButton.dataset.todoId = todo.id;
             updateButton.onclick = onUpdate;
@@ -126,6 +129,7 @@ const  render = () => {
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
+            checkbox.classList.add('checkbox');
             checkbox.onchange = checkTodo;
             checkbox.dataset.todoId = todo.id;
             if (todo.isDone === true) {
@@ -136,6 +140,7 @@ const  render = () => {
             element.prepend(checkbox);
 
             const editButton = document.createElement('button');
+            editButton.classList.add('editButton');
             editButton.innerText = 'Edit';
             editButton.style = 'margin-left: 12px';
             editButton.onclick = onEdit;
@@ -143,6 +148,7 @@ const  render = () => {
             element.appendChild(editButton);
 
             const deleteButton = document.createElement('button');
+            deleteButton.classList.add('deleteButton');
             deleteButton.innerText= 'Delete';
             deleteButton.style= 'margin-left: 20px;'
             deleteButton.onclick= deleteTodo;
@@ -210,6 +216,17 @@ function checkTodo(event) {
 
   render();
 
+  function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+ }
+
+ document.getElementById("w8-d-blue").addEventListener("click", function (e) {
+    var target = e.target;
+
+    target.classList.toggle("iconize");
+    target.classList.toggle("iconize2");
+}, false);
 
 
 
